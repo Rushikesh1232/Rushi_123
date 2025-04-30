@@ -1005,5 +1005,196 @@ Unboxing	Auto convert object → primitive	int x = obj;
 valueOf()	Returns Wrapper object from String or primitive	Integer.valueOf("10")
 parseXxx()	Returns primitive from String	Integer.parseInt("10")
 
+_______________________________________________________________________________________________________________________
+📚 What is a Package in Java?
+A package is just a folder (or directory) in Java that groups related classes and interfaces together.
+
+Packages help to organize your Java projects better and avoid name conflicts.
+
+✅ Think of it like:
+When you save your personal files — you group your photos, music, documents into separate folders.
+Similarly, in Java, we group related classes into packages.
+
+📑 Why Packages are Needed?
+
+Reason	Why
+Organization	Keep related classes grouped together
+Avoid Name Conflicts	Two classes with same name can exist in different packages
+Access Control	Classes and methods can be protected (default or protected access)
+Code Reuse	Easily reuse code from another package
+📌 How to Create a Package in Java
+✅ To create a package:
+
+java
+Copy
+Edit
+package packagename;
+✅ Example:
+
+java
+Copy
+Edit
+package mypackage;
+
+public class MyClass {
+    public void display() {
+        System.out.println("Hello from package!");
+    }
+}
+Save this file as MyClass.java inside a folder called mypackage.
+
+📌 How to Compile and Run Package Program
+Suppose you have:
+
+Folder: mypackage
+
+File: MyClass.java
+
+✅ Steps:
+
+Compile:
+
+bash
+Copy
+Edit
+javac -d . MyClass.java
+(-d . means create package folders automatically.)
+
+Run:
+
+bash
+Copy
+Edit
+java mypackage.MyClass
+📌 How to Import a Package
+✅ If you want to use classes from one package into another:
+
+java
+Copy
+Edit
+import packagename.ClassName;
+or
+
+java
+Copy
+Edit
+import packagename.*;
+(* imports all classes from that package.)
+
+✅ Example:
+
+java
+Copy
+Edit
+import mypackage.MyClass;  // importing MyClass
+
+public class Test {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.display();
+    }
+}
+📚 Types of Packages in Java
+
+Type	Example
+Built-in Packages	Provided by Java (e.g., java.util, java.io, java.lang)
+User-defined Packages	Created by users (your own packages)
+📚 1. java.lang
+java.lang is the core package of Java.
+
+It contains fundamental classes that are essential for Java programming.
+
+This package is automatically imported into every Java program.
+
+✅ Common Classes in java.lang:
+
+
+Class	Purpose
+String	Working with text
+Math	Mathematical functions (abs, sqrt, pow)
+System	Standard input/output, system properties
+Object	Base class for all Java classes
+Exception	Exception handling
+Thread	Multithreading
+Runtime	Interact with the Java runtime environment
+Integer, Double, etc.	Wrapper classes for primitive types
+✅ Example Usage:
+
+java
+Copy
+Edit
+String s = "Hello";
+System.out.println(Math.sqrt(16));  // 4.0
+🔵 You don't need to import java.lang.*; — it's already available.
+
+📚 2. java.io
+java.io stands for Input/Output.
+
+It contains classes required for reading and writing data (like files, streams).
+
+✅ Common Classes in java.io:
+
+
+Class	Purpose
+File	Represent files and directories
+FileReader, FileWriter	Reading from / writing to files (character-based)
+BufferedReader, BufferedWriter	Faster reading/writing with buffers
+InputStream, OutputStream	Byte-based input and output
+Serializable	Interface to make an object serializable (save object state)
+IOException	Exception class for I/O errors
+✅ Example Usage:
+
+java
+Copy
+Edit
+import java.io.File;
+import java.io.IOException;
+
+public class FileExample {
+    public static void main(String[] args) throws IOException {
+        File file = new File("test.txt");
+        file.createNewFile();
+        System.out.println("File created: " + file.getName());
+    }
+}
+📚 3. java.util
+java.util is one of the most important and largest packages.
+
+It contains utility classes — like Collections Framework, Date/Time classes, Random number generation, etc.
+
+✅ Common Classes in java.util:
+
+
+Class	Purpose
+ArrayList, LinkedList, HashMap, HashSet, TreeSet	Collections (dynamic data structures)
+Collections	Utility class for collection operations (sort, reverse, etc.)
+Scanner	To read input from keyboard, file
+Random	To generate random numbers
+Date, Calendar	Date and time management
+Timer, TimerTask	For scheduling tasks
+Optional	Handle values that may be null
+✅ Example Usage:
+
+java
+Copy
+Edit
+import java.util.ArrayList;
+
+public class ListExample {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+
+        System.out.println(list);
+    }
+}
+📑 Quick Comparison
+
+Package	Main Purpose
+java.lang	Core language features (String, System, Math, Exception, Thread)
+java.io	Input/Output operations (File handling, Streams)
+java.util	Utility functions (Collections, Dates, Random, Scanner)
+
 
 
