@@ -1196,5 +1196,111 @@ java.lang	Core language features (String, System, Math, Exception, Thread)
 java.io	Input/Output operations (File handling, Streams)
 java.util	Utility functions (Collections, Dates, Random, Scanner)
 
+________________________________________________________________________________________________________________________A Functional Interface is an interface with only one abstract method.
+
+These are used in Lambda Expressions and Method References.
+
+✅ Examples of Functional Interfaces:
+
+Runnable → run()
+
+Callable → call()
+
+Comparator → compare()
+
+Interfaces from java.util.function package (Predicate, Function, Consumer, Supplier)
+
+✅ Example of Custom Functional Interface:
+
+java
+Copy
+Edit
+@FunctionalInterface
+interface MyInterface {
+    void show();  // Only one abstract method
+}
+
+public class Test {
+    public static void main(String[] args) {
+        MyInterface obj = () -> System.out.println("Hello Functional Interface!");
+        obj.show();
+    }
+}
+🔵 Output:
+Hello Functional Interface!
+
+✅ Important:
+A functional interface can have default and static methods, but only one abstract method.
+
+📚 java.util.function Package
+Java provides many built-in functional interfaces in java.util.function package.
+The four most important ones are:
+
+📌 1. Predicate (T → boolean)
+Used to test a condition (returns true or false).
+
+✅ Example:
+
+java
+Copy
+Edit
+import java.util.function.Predicate;
+
+public class PredicateExample {
+    public static void main(String[] args) {
+        Predicate<Integer> isPositive = n -> n > 0;
+        System.out.println(isPositive.test(5));   // true
+        System.out.println(isPositive.test(-3));  // false
+    }
+}
+📌 2. Function (T → R)
+Takes an input and returns an output.
+
+✅ Example:
+
+java
+Copy
+Edit
+import java.util.function.Function;
+
+public class FunctionExample {
+    public static void main(String[] args) {
+        Function<String, Integer> lengthFunction = str -> str.length();
+        System.out.println(lengthFunction.apply("Java"));  // 4
+    }
+}
+📌 3. Consumer (T → void)
+Consumes the input but returns nothing.
+
+✅ Example:
+
+java
+Copy
+Edit
+import java.util.function.Consumer;
+
+public class ConsumerExample {
+    public static void main(String[] args) {
+        Consumer<String> printUpperCase = str -> System.out.println(str.toUpperCase());
+        printUpperCase.accept("hello");  // HELLO
+    }
+}
+📌 4. Supplier (() → T)
+Supplies data without taking any input.
+
+✅ Example:
+
+java
+Copy
+Edit
+import java.util.function.Supplier;
+
+public class SupplierExample {
+    public static void main(String[] args) {
+        Supplier<String> supplier = () -> "Java Programming!";
+        System.out.println(supplier.get());  // Java Programming!
+    }
+}
+
 
 
