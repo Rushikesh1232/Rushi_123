@@ -810,3 +810,129 @@ Only the whole number is stored
 Type Casting	Direction	Example Code	Safe?	Automatic?
 Widening	Small → Big	int a = 10; long b = a;	✅ Safe	✅ Yes
 Narrowing	Big → Small	double d = 9.5; int i = (int)d;	⚠️ Data loss	❌ No
+__________________________________________________________________________________________________________________________📚 Object's Lifecycle in Java
+In Java, an Object goes through three main stages:
+
+Creation
+
+Reassignment
+
+Garbage Collection
+(including finalize() method)
+
+1. 📌 Object Creation
+In Java, objects are created using the new keyword.
+
+When you use new, Java:
+
+Allocates memory in Heap.
+
+Calls the constructor to initialize the object.
+
+✅ Example:
+
+java
+Copy
+Edit
+class Student {
+    Student() {
+        System.out.println("Student object created");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Student s = new Student();  // Object creation
+    }
+}
+🔵 Output:
+
+csharp
+Copy
+Edit
+Student object created
+⚡ Key Point:
+Memory is assigned in Heap Memory when new is used.
+
+2. 📌 Object Reassignment
+Reassignment means changing a reference to point to another object.
+
+When you reassign, the old object may become unreachable if no other reference is pointing to it.
+
+✅ Example:
+
+java
+Copy
+Edit
+class Student {}
+
+public class Test {
+    public static void main(String[] args) {
+        Student s1 = new Student(); // s1 --> object1
+        Student s2 = new Student(); // s2 --> object2
+
+        s1 = s2;  // Now s1 points to object2; object1 is unreferenced
+    }
+}
+🔵 What happens here?
+
+
+Step	Action
+1	s1 points to object1
+2	s2 points to object2
+3	s1 = s2; => now both s1 and s2 point to object2
+4	object1 has no reference anymore → eligible for garbage collection
+3. 📌 Garbage Collection
+Java has an Automatic Garbage Collector.
+
+It removes unused objects (objects with no reference) from memory.
+
+Helps in freeing up memory and preventing memory leaks.
+
+✅ Key Points:
+
+You cannot force garbage collection, but you can request it using:
+
+java
+Copy
+Edit
+System.gc();
+JVM decides when to actually run it.
+
+4. 📌 finalize() Method (before garbage collection)
+finalize() is a special method that is called before the object is garbage collected.
+
+You can override it to do cleanup operations like closing files or releasing resources.
+
+✅ Example:
+
+java
+Copy
+Edit
+class Student {
+    protected void finalize() {
+        System.out.println("Finalize method called");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Student s = new Student();
+        s = null;  // Now object is eligible for garbage collection
+
+        System.gc();  // Request JVM to run Garbage Collector
+    }
+}
+🔵 Output:
+
+sql
+Copy
+Edit
+Finalize method called
+⚡ Important:
+
+finalize() is called only once before the object is destroyed.
+
+In Java 9+, finalize() is deprecated (because it's slow and error-prone).
+
+In modern Java, better to use try-with-resources or explicit resource handling.
