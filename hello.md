@@ -936,3 +936,74 @@ finalize() is called only once before the object is destroyed.
 In Java 9+, finalize() is deprecated (because it's slow and error-prone).
 
 In modern Java, better to use try-with-resources or explicit resource handling.
+
+_________________________________________________________________________________________________________________________
+📘 10. Wrapper Classes & Autoboxing in Java
+✅ 1. What are Wrapper Classes?
+🔹 Simple Meaning:
+Wrapper classes wrap (convert) primitive data types (int, char, double, etc.) into objects.
+🔹 Why?
+Java is object-oriented, but primitives are not objects.
+Some data structures (like ArrayList, HashMap) require objects, not primitives.
+Useful in collections, serialization, method parameters, etc.
+
+🔹 Example:
+Primitive	Wrapper Class
+int	Integer
+double	Double
+char	Character
+boolean	Boolean
+🔹 Example:
+int x = 10;
+Integer obj = Integer.valueOf(x);  // Wrapping primitive into object
+System.out.println(obj);           // prints: 10
+
+
+✅ 2. Why do we need Wrapper Classes?
+✔ To use primitives in collections
+ArrayList<Integer> list = new ArrayList<>();
+list.add(10);  // can't add 'int', but autoboxing converts it
+✔ To use utility methods like parseInt(), valueOf(), toString(), etc.
+✔ For type conversion, comparisons, and other operations.
+
+✅ 3. What is Autoboxing?
+🔹 Simple Meaning:
+Automatically converting a primitive → wrapper object
+🔹 Example:
+int a = 5;
+Integer obj = a;  // Autoboxing: int → Integer
+🔧 Java internally does:
+Integer obj = Integer.valueOf(a);
+
+
+✅ 4. What is Unboxing?
+🔹 Simple Meaning:
+Automatically converting wrapper object → primitive
+
+🔹 Example:
+Integer obj = 10;
+int a = obj;  // Unboxing: Integer → int
+🔧 Java internally does:
+int a = obj.intValue();
+
+
+✅ 6. valueOf() vs parseXxx()
+Method	         Returns	                  Input	Example
+valueOf()	Wrapper	String/primitive	Integer.valueOf("100") → Integer
+parseXxx()	Primitiv String	                Integer.parseInt("100") → int
+
+
+✅ Example:
+String str = "123";
+int x = Integer.parseInt(str);        // returns primitive int
+Integer y = Integer.valueOf(str);     // returns Integer object
+
+Concept	Purpose	Example
+Wrapper Class	Convert primitive to object	Integer obj = new Integer(5);
+Autoboxing	Auto convert primitive → object	Integer obj = 10;
+Unboxing	Auto convert object → primitive	int x = obj;
+valueOf()	Returns Wrapper object from String or primitive	Integer.valueOf("10")
+parseXxx()	Returns primitive from String	Integer.parseInt("10")
+
+
+
