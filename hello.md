@@ -259,5 +259,164 @@ c) extends
 d) this
 
 Answer: c) extends
+📌 1. Who is known as the father of Java programming language?
+a) Dennis Ritchie
+b) James Gosling
+c) Bjarne Stroustrup
+d) Guido van Rossum
 
-📢 Done!
+Answer: b) James Gosling
+
+📌 2. Which feature of Java is responsible for "Write Once, Run Anywhere"?
+a) Object-Oriented
+b) Platform Dependent
+c) Bytecode
+d) Dynamic
+
+Answer: c) Bytecode
+
+📌 3. Java programs are compiled into ________.
+a) Assembly code
+b) Machine code
+c) Bytecode
+d) Source code
+
+Answer: c) Bytecode
+
+📌 4. What is the output of the Java compiler (javac)?
+a) .java file
+b) .exe file
+c) .class file
+d) .html file
+
+Answer: c) .class file
+
+📌 5. Which of the following is NOT a Java feature?
+a) Platform Independent
+b) Secure
+c) Architecture Neutral
+d) Pointer Arithmetic
+
+Answer: d) Pointer Arithmetic
+
+📌 6. Which type of variable is declared inside a method?
+a) Static variable
+b) Instance variable
+c) Local variable
+d) Global variable
+
+Answer: c) Local variable
+
+📌 7. Which keyword is used to inherit a class in Java?
+a) extends
+b) inherits
+c) implements
+d) super
+
+Answer: a) extends
+
+📌 8. In Java, polymorphism refers to:
+a) Many methods with same name but different signatures
+b) Many classes with the same parent
+c) Many variables with same value
+d) Many loops inside a method
+
+Answer: a) Many methods with same name but different signatures
+
+📌 9. Which of these is not a primitive data type in Java?
+a) int
+b) boolean
+c) float
+d) String
+
+Answer: d) String
+
+📌 10. Which memory area stores objects in Java?
+a) Stack
+b) Heap
+c) PC Register
+d) Native Stack
+
+Answer: b) Heap
+
+📌 11. Which tool is used to create documentation from Java source code comments?
+a) javac
+b) javadoc
+c) java
+d) jdb
+
+Answer: b) javadoc
+
+📌 12. Which part of JVM executes Java bytecode?
+a) Compiler
+b) Execution Engine
+c) Class Loader
+d) Garbage Collector
+
+Answer: b) Execution Engine
+
+📌 13. Which package is automatically imported in every Java program?
+a) java.util
+b) java.io
+c) java.lang
+d) java.awt
+
+Answer: c) java.lang
+
+📌 14. What happens when an object is no longer referenced?
+a) JVM compiles it again
+b) Garbage Collector deletes it
+c) It stays forever in memory
+d) It throws exception
+
+Answer: b) Garbage Collector deletes it
+
+📌 15. Which keyword is used to define a constant variable in Java?
+a) final
+b) static
+c) const
+d) constant
+
+Answer: a) final
+
+📌 16. What is the extension of a Java compiled file?
+a) .java
+b) .exe
+c) .class
+d) .txt
+
+Answer: c) .class
+
+📌 17. Which memory area stores method parameters and local variables?
+a) Heap
+b) Stack
+c) Method Area
+d) Native Stack
+
+Answer: b) Stack
+
+📌 18. How many times is the static variable initialized?
+a) Every time an object is created
+b) Only once when the class is loaded
+c) Each time method is called
+d) None of the above
+
+Answer: b) Only once when the class is loaded
+
+📌 19. The "main" method in Java must be:
+a) Private and static
+b) Public and static
+c) Protected and static
+d) Private and abstract
+
+Answer: b) Public and static
+
+📌 20. Which of the following is responsible for loading classes in JVM?
+a) Execution Engine
+b) Class Loader
+c) Memory Manager
+d) JDK
+
+Answer: b) Class Loader
+
+
