@@ -417,6 +417,133 @@ b) Class Loader
 c) Memory Manager
 d) JDK
 
-Answer: b) Class Loader
+Answer: b) Class Loade
+_________________________________________________________________________________________________________________________
+:
 
+📚 1. Instance Variable
+Declared inside a class, but outside any method.
 
+Belongs to an object — each object has its own copy.
+
+Value can be different for different objects.
+
+Created when object is created and destroyed when object is destroyed.
+
+✅ Example:
+
+java
+Copy
+Edit
+class Student {
+    int rollNumber;  // Instance Variable
+    String name;     // Instance Variable
+
+    void display() {
+        System.out.println(rollNumber + " " + name);
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.rollNumber = 101;
+        s1.name = "John";
+
+        Student s2 = new Student();
+        s2.rollNumber = 102;
+        s2.name = "Alice";
+
+        s1.display();
+        s2.display();
+    }
+}
+🔵 Output:
+
+Copy
+Edit
+101 John
+102 Alice
+📚 2. Static Variable
+Declared using the static keyword inside a class.
+
+Belongs to the class, not to objects.
+
+Shared among all objects — only one copy exists.
+
+Can be accessed using class name also.
+
+✅ Example:
+
+java
+Copy
+Edit
+class Student {
+    int rollNumber;
+    String name;
+    static String college = "ABC College";  // Static Variable
+
+    void display() {
+        System.out.println(rollNumber + " " + name + " " + college);
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.rollNumber = 101;
+        s1.name = "John";
+
+        Student s2 = new Student();
+        s2.rollNumber = 102;
+        s2.name = "Alice";
+
+        s1.display();
+        s2.display();
+    }
+}
+🔵 Output:
+
+Copy
+Edit
+101 John ABC College
+102 Alice ABC College
+📚 3. Local Variable
+Declared inside a method, constructor, or block.
+
+Scope is only within that method — not visible outside.
+
+Must be initialized before use.
+
+Memory allocated only when method is called, and destroyed after method ends.
+
+✅ Example:
+
+java
+Copy
+Edit
+class Test {
+    void show() {
+        int num = 10; // Local Variable
+        System.out.println(num);
+    }
+
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.show();
+    }
+}
+🔵 Output:
+
+Copy
+Edit
+10
+⚡ Important Point:
+Local variables do not get default values — you have to manually initialize them!
+
+📑 Quick Summary Table:
+
+Type of Variable	Where Declared	Lifetime	Scope	Shared?
+Instance Variable	Inside class, outside methods	Till object exists	Throughout object	No
+Static Variable	Inside class with static keyword	Till program ends	Throughout class	Yes (common for all objects)
+Local Variable	Inside methods, blocks, constructors	During method execution	Inside method only	No
