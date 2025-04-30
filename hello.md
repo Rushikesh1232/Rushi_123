@@ -1,4 +1,4 @@
-Hadoop is an open-source framework that allows for the distributed processing of large datasets across clusters of computers using simple programming models. It is designed to scale from a single server to thousands of machines, offering high availability and fault tolerance.
+*Hadoop is an open-source framework that allows for the distributed processing of large datasets across clusters of computers using simple programming models. It is designed to scale from a single server to thousands of machines, offering high availability and fault tolerance.*
 
 Key Concepts of Hadoop:
 Hadoop Distributed File System (HDFS) – A storage system that splits large files into smaller blocks and distributes them across multiple nodes in a cluster.
