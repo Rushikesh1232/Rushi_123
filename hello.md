@@ -1301,6 +1301,199 @@ public class SupplierExample {
         System.out.println(supplier.get());  // Java Programming!
     }
 }
+________________________________________________________________________________________________________________________
+Sure!
+Let’s go step-by-step and explain Lambda Expressions in Java very clearly with examples, in easy language — exactly the way it's needed for exams like CDAC CCPP ✅.
 
+📚 What is a Lambda Expression in Java?
+Lambda Expression is a short way to write anonymous functions (functions without a name).
+
+It is introduced in Java 8 to reduce code length and increase readability.
+
+Mainly used to implement functional interfaces.
+
+✅ Simple meaning:
+
+Instead of writing a full class for a small function, you can now write it in one line.
+
+📚 Syntax of Lambda Expression
+✅ General form:
+
+java
+Copy
+Edit
+(parameters) -> { body }
+✅ Simpler versions:
+
+If only one statement: {} is optional.
+
+If only one parameter: () is optional.
+
+✅ Example:
+
+java
+Copy
+Edit
+(a, b) -> a + b
+Takes two parameters (a and b) and returns their sum.
+
+📚 Key Components of Lambda Expression
+
+Part	Meaning
+Parameters	Input values
+Arrow (->)	Separates parameters and body
+Body	Code that runs (can return something)
+📚 Why Lambda Expressions?
+✅ Before Lambda (old way):
+
+java
+Copy
+Edit
+Runnable r = new Runnable() {
+    public void run() {
+        System.out.println("Running...");
+    }
+};
+r.run();
+✅ After Lambda (new way):
+
+java
+Copy
+Edit
+Runnable r = () -> System.out.println("Running...");
+r.run();
+✅ Advantage:
+
+Less code, clear code, easy maintenance.
+
+📚 Example 1: Runnable with Lambda
+java
+Copy
+Edit
+public class LambdaDemo {
+    public static void main(String[] args) {
+        Runnable r = () -> System.out.println("Thread is running using Lambda!");
+        r.run();
+    }
+}
+✅ Output:
+Thread is running using Lambda!
+
+📚 Example 2: Comparator with Lambda
+java
+Copy
+Edit
+import java.util.*;
+
+public class LambdaComparator {
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("Banana", "Apple", "Mango");
+
+        // Sorting using Lambda
+        Collections.sort(list, (a, b) -> a.compareTo(b));
+
+        System.out.println(list);
+    }
+}
+✅ Output:
+[Apple, Banana, Mango]
+
+📚 Types of Lambda Bodies
+
+Type	Example	Description
+Single-line Expression	n -> n * n	No {} needed
+Multi-line Block	(a, b) -> { int sum = a + b; return sum; }	{} needed
+📚 Rules of Lambda Expression
+✅ 1. Lambda expressions can be assigned to a reference variable of a Functional Interface.
+
+✅ 2. Functional Interface = Interface having only one abstract method.
+
+✅ 3. Parameters type can be omitted because Java can infer types (Type Inference).
+
+✅ 4. If you have one statement, {} and return can be omitted.
+
+📚 Example 3: Consumer with Lambda
+java
+Copy
+Edit
+import java.util.function.Consumer;
+
+public class LambdaConsumer {
+    public static void main(String[] args) {
+        Consumer<String> consumer = (str) -> System.out.println(str.toUpperCase());
+        consumer.accept("hello lambda");
+    }
+}
+✅ Output:
+HELLO LAMBDA
+
+📚 Important Points
+
+Topic	Details
+Introduced In	Java 8
+Purpose	Functional programming, simplify code
+Used With	Functional Interfaces
+Benefit	Reduces boilerplate code
+Works On	Collections, Multithreading, Event Handling
+📚 Summary Table
+
+Feature	Description
+Lambda Expression	A short anonymous function
+Syntax	(parameters) -> { body }
+Requirement	Functional Interface
+Benefits	Less code, more readability
+Java Version	Java 8
+📚 Tiny Coding Examples
+✅ No parameter:
+
+java
+Copy
+Edit
+() -> System.out.println("Hello");
+✅ One parameter:
+
+java
+Copy
+Edit
+x -> x * x
+✅ Multiple parameters:
+
+java
+Copy
+Edit
+(x, y) -> x + y
+📚 MCQs on Lambda Expressions
+1. Lambda expressions can be used to implement:
+a) Abstract classes
+
+b) Functional interfaces
+
+c) Interfaces with multiple methods
+
+d) Concrete classes
+
+✅ Answer: b) Functional interfaces
+
+2. Which Java version introduced Lambda Expressions?
+a) Java 6
+
+b) Java 7
+
+c) Java 8
+
+d) Java 9
+
+✅ Answer: c) Java 8
+
+3. Identify the correct Lambda syntax:
+a) (int a, int b) => a + b
+
+b) (int a, int b) -> a + b
+
+c) (a, b) -> { return a + b; }
+
+d) Both b) and c)
+
+✅ Answer: d) Both b) and c)
 
 
