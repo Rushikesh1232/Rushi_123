@@ -547,3 +547,266 @@ Type of Variable	Where Declared	Lifetime	Scope	Shared?
 Instance Variable	Inside class, outside methods	Till object exists	Throughout object	No
 Static Variable	Inside class with static keyword	Till program ends	Throughout class	Yes (common for all objects)
 Local Variable	Inside methods, blocks, constructors	During method execution	Inside method only	No
+_________________________________________________________________________________________________________________________
+ 1. JVM (Java Virtual Machine)
+✅ What is JVM?
+JVM stands for Java Virtual Machine.
+
+It is an abstract machine that enables your computer to run Java programs.
+
+JVM is platform-dependent, but Java code is platform-independent because of the JVM.
+
+🔧 Responsibilities of JVM:
+Loads the .class file (compiled bytecode).
+
+Verifies the bytecode to ensure security.
+
+Interprets or compiles the bytecode to native machine code.
+
+Manages memory (via Garbage Collection).
+
+Handles exceptions and ensures security.
+
+🔁 How it works:
+java
+Copy
+Edit
+// You write a Java program
+public class Hello {
+   public static void main(String[] args) {
+      System.out.println("Hello CDAC!");
+   }
+}
+javac Hello.java → Compiled to Hello.class (Bytecode)
+
+java Hello → JVM runs the bytecode in Hello.class
+
+📌 Note:
+JVM is the reason Java is "Write Once, Run Anywhere".
+
+🔹 2. JRE (Java Runtime Environment)
+✅ What is JRE?
+JRE = JVM + Libraries + Other Files
+
+It is the runtime environment required to run Java programs.
+
+It does not include development tools like compilers or debuggers.
+
+🧩 JRE Contains:
+JVM
+
+Java Class Libraries (e.g., java.lang, java.util)
+
+Supporting files (like configuration files)
+
+📌 Note:
+If you only want to run Java programs, install JRE.
+
+Example: End-users who use Java-based apps.
+
+🔹 3. JDK (Java Development Kit)
+✅ What is JDK?
+JDK = JRE + Development Tools
+
+It is a full package for Java developers.
+
+🧰 JDK Contains:
+JRE (JVM + Libraries)
+
+javac (Java Compiler)
+
+javadoc (Documentation generator)
+
+jar (Packaging tool)
+
+debuggers and other development tools
+
+📌 Note:
+If you want to write, compile, and run Java programs, install JDK.
+
+🔹 4. JIT (Just-In-Time Compiler)
+✅ What is JIT?
+JIT is part of the JVM.
+
+It improves performance by compiling bytecode into native machine code at runtime.
+
+🔧 How it works:
+Initially, JVM interprets bytecode line by line.
+
+When it detects frequently used code (hotspot), it compiles it to native code.
+
+Native code is faster, improving performance.
+
+📌 Types of JIT:
+Method-level JIT: Compiles entire methods.
+
+Adaptive JIT: Learns and optimizes over time.
+
+🧠 Summary Table
+Component	Stands For	Contains	Purpose
+JVM	Java Virtual Machine	—	Runs bytecode
+JRE	Java Runtime Environment	JVM + Libraries	Runs Java applications
+JDK	Java Development Kit	JRE + Tools	Develops and runs Java apps
+JIT	Just-In-Time Compiler	Part of JVM	Boosts performance by compiling at runtime
+
+___________________________________________________________________________________________________________________________________________________________
+
+
+ A. Primitive Data Types (8 Types)
+1. byte – 1 Byte (8 bits)
+Smallest integer data type.
+
+Range: -128 to 127
+
+java
+Copy
+Edit
+byte a = 10;
+System.out.println("Byte value: " + a);
+2. short – 2 Bytes (16 bits)
+Larger than byte but smaller than int.
+
+Range: -32,768 to 32,767
+
+java
+Copy
+Edit
+short s = 20;
+System.out.println("Short value: " + s);
+3. int – 4 Bytes (32 bits)
+Most commonly used integer type.
+
+Range: -2^31 to 2^31-1
+
+java
+Copy
+Edit
+int i = 30;
+System.out.println("Int value: " + i);
+4. long – 8 Bytes (64 bits)
+Used when int is not large enough.
+
+Add L at the end of the value
+
+java
+Copy
+Edit
+long l = 40L;
+System.out.println("Long value: " + l);
+5. float – 4 Bytes (32 bits)
+Used for decimal numbers.
+
+Add f at the end of the value
+
+java
+Copy
+Edit
+float f = 3.14f;
+System.out.println("Float value: " + f);
+6. double – 8 Bytes (64 bits)
+More precise than float, default for decimals
+
+java
+Copy
+Edit
+double d = 9.8;
+System.out.println("Double value: " + d);
+7. char – 2 Bytes (16 bits)
+Stores a single character in single quotes
+
+java
+Copy
+Edit
+char c = 'A';
+System.out.println("Char value: " + c);
+8. boolean – 1 Byte (usually 1 bit)
+Stores only true or false
+
+java
+Copy
+Edit
+boolean b = true;
+System.out.println("Boolean value: " + b);
+__________________________________________________________________________________________________________________________________________________________
+All data type exampls 
+
+public class DataTypesExample {
+    public static void main(String[] args) {
+        byte a = 10;
+        short s = 20;
+        int i = 30;
+        long l = 40L;
+        float f = 3.14f;
+        double d = 9.8;
+        char c = 'A';
+        boolean b = true;
+
+        System.out.println("Byte value: " + a);
+        System.out.println("Short value: " + s);
+        System.out.println("Int value: " + i);
+        System.out.println("Long value: " + l);
+        System.out.println("Float value: " + f);
+        System.out.println("Double value: " + d);
+        System.out.println("Char value: " + c);
+        System.out.println("Boolean value: " + b);
+    }
+}
+
+__________________________________________________________________________________________________________________________________________________________
+
+
+ 8. Type Casting in Java
+Type Casting means converting a variable from one data type to another. In Java, this is mainly of two types:
+
+🔹 A. Widening Casting (Implicit)
+➡️ Converting a smaller type to a larger type size
+➡️ Done automatically by Java – no data loss
+
+✅ Types Order (Small to Big):
+arduino
+Copy
+Edit
+byte → short → int → long → float → double
+🧠 Example:
+java
+Copy
+Edit
+int a = 10;        // int is 4 bytes
+long b = a;        // long is 8 bytes - bigger than int
+System.out.println("Widening: " + b);
+✅ Output:
+makefile
+Copy
+Edit
+Widening: 10
+📌 Why allowed?
+No loss of data
+
+JVM handles it automatically
+
+🔹 B. Narrowing Casting (Explicit)
+➡️ Converting a larger type to a smaller type size
+➡️ You must explicitly cast using (type)
+➡️ Possible data loss
+
+🧠 Example:
+java
+Copy
+Edit
+double d = 9.5;       // double is 8 bytes
+int i = (int) d;      // Explicit cast: double → int
+System.out.println("Narrowing: " + i);
+✅ Output:
+makefile
+Copy
+Edit
+Narrowing: 9
+⚠️ What happened?
+Decimal part .5 is truncated
+
+Only the whole number is stored
+
+📊 Summary Table
+Type Casting	Direction	Example Code	Safe?	Automatic?
+Widening	Small → Big	int a = 10; long b = a;	✅ Safe	✅ Yes
+Narrowing	Big → Small	double d = 9.5; int i = (int)d;	⚠️ Data loss	❌ No
