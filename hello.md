@@ -150,10 +150,6 @@ Packages are like folders containing classes.
 To use classes from another package, use import.
 
 🔹 Example:
-
-java
-Copy
-Edit
 import java.util.Scanner;
 ➡ c) Difference between Object Reference Variables and Primitive Variables
 
@@ -164,10 +160,6 @@ Reference Variable	String s = "hello";	Stores memory address (reference) of obje
 Access fields using . operator.
 
 🔹 Example:
-
-java
-Copy
-Edit
 class Student {
     int id;
     String name;
@@ -200,7 +192,6 @@ a) Dennis Ritchie
 b) James Gosling
 c) Charles Babbage
 d) Guido van Rossum
-
 Answer: b) James Gosling
 
 Q2: Which feature of Java allows it to be platform-independent?
@@ -208,7 +199,6 @@ a) Compilation
 b) Bytecode
 c) Object-Oriented
 d) Exception Handling
-
 Answer: b) Bytecode
 
 Q3: What is the default value of a local variable in Java?
@@ -216,7 +206,6 @@ a) 0
 b) null
 c) Depends on type
 d) No default value
-
 Answer: d) No default value
 
 Q4: What is the purpose of the javac command?
@@ -224,7 +213,6 @@ a) To interpret code
 b) To debug code
 c) To compile code
 d) To run code
-
 Answer: c) To compile code
 
 Q5: Which of the following is NOT a primitive data type?
@@ -232,7 +220,6 @@ a) int
 b) float
 c) boolean
 d) String
-
 Answer: d) String
 
 Q6: In Java, "Encapsulation" is achieved by?
@@ -240,7 +227,6 @@ a) Inheritance
 b) Interfaces
 c) Classes and Access Modifiers
 d) Abstract Classes
-
 Answer: c) Classes and Access Modifiers
 
 Q7: What does JVM stand for?
@@ -248,7 +234,6 @@ a) Java Verified Machine
 b) Java Visual Machine
 c) Java Virtual Machine
 d) Java Variable Method
-
 Answer: c) Java Virtual Machine
 
 Q8: In Java, which keyword is used to inherit a class?
@@ -256,5 +241,4 @@ a) implement
 b) inherit
 c) extends
 d) this
-
 Answer: c) extends
